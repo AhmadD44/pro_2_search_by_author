@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/workout.dart';
+import 'package:flutter_application_1/services/books_service.dart';
 class BookDetailsScreen extends StatelessWidget {
   final Books book;
 
@@ -30,9 +30,7 @@ class BookDetailsScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Center(
               child: ElevatedButton(
-                onPressed: ()  {
-                // _showRegisterDialog(context)
-                }
+                onPressed: ()  {}
                 ,
                 child: const Text('Purchase'),
               ),
@@ -70,18 +68,6 @@ class BookDetailsScreen extends StatelessWidget {
               onPressed: () => Navigator.of(context).pop(),
               child: const Text('Cancel'),
             ),
-            // ElevatedButton(
-            //   onPressed: () async {
-            //     final message = await registerForEvent(
-            //       event.id,
-            //       nameController.text,
-            //       emailController.text,
-            //     );
-            //     Navigator.of(context).pop();
-            //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
-            //   },
-            //   child: const Text('Submit'),
-            // ),
           ],
         );
       },

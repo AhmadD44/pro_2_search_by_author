@@ -38,15 +38,13 @@ Future<void> fetchBooks(Function(bool) onComplete,
   if (response.statusCode == 200) {
     final jsonResponse = convert.jsonDecode(response.body);
     if (jsonResponse is Map<String, dynamic>) {
-      // If it's a map, check if there's a key that contains the list of books
-      // For example, assuming the response contains a key called 'books'
       var booksList = jsonResponse['data'];
       if (booksList is List) {
         for (var row in booksList) {
           books.add(Books(
-            title: row['title'] ?? '',        // Provide default empty string if null
-            author: row['author'] ?? '',      // Provide default empty string if null
-            description: row['description'] ?? '',  // Provide default empty string if null
+            title: row['title'] ?? '',        
+            author: row['author'] ?? '',      
+            description: row['description'] ?? '',  
             category: row['category'] ?? '',  
           ));
         }

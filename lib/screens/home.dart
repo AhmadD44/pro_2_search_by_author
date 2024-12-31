@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/book_details.dart';
-import 'package:flutter_application_1/services/workout.dart'; // Make sure this provides fetchBooks and getBooks
+import 'package:flutter_application_1/services/books_service.dart'; 
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -71,11 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child:
                 _isLoading
-                ? const Center(child: CircularProgressIndicator()) // Loading spinner
+                ? const Center(child: CircularProgressIndicator()) 
                 :
                 _filteredBooks.isEmpty
                     ? const Center(
-                        child: Text("No Book found")) // No results found
+                        child: Text("No Book found")) 
                     : ListView.builder(
                         itemCount: _filteredBooks.length,
                         itemBuilder: (context, index) {
@@ -89,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                // Navigate to Event Details Screen (you'll need to define EventDetails screen)
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -130,18 +129,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                       
                                     ),
                                     Container(child: Text(book.category),)
-                                    // IconButton(
-                                    //   icon: const Icon(Icons.arrow_forward),
-                                    //   onPressed: () {
-                                    //     // Handle event navigation
-                                    //     Navigator.push(
-                                    //       context,
-                                    //       MaterialPageRoute(
-                                    //         builder: (context) => EventDetailsScreen(event: book),
-                                    //       ),
-                                    //     );
-                                    //   },
-                                    // ),
                                   ],
                                 ),
                               ),
